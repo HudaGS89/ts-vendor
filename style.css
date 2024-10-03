@@ -209,12 +209,12 @@
 /* Media query untuk responsivitas pada ukuran kecil */
 @media (max-width: 576px) {
   .carousel-caption {
-    bottom: 25%;
+    bottom: 30%;
     left: 0;
   }
 
-  .carousel-caption h5 {
-    font-size: 3.5rem; /* Ukuran font besar untuk judul */
+  .carousel-caption h1 {
+    font-size: 2rem; /* Ukuran font besar untuk judul */
   }
 
   .carousel-caption p {
