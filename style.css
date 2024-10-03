@@ -208,12 +208,8 @@
 
 /* Media query untuk responsivitas pada ukuran kecil */
 @media (max-width: 576px) {
-  .carousel-overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Overlay hitam */
-  }
-
   .carousel-caption {
-    bottom: 35%;
+    bottom: 25%;
     left: 0;
   }
 
