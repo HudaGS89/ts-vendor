@@ -52,51 +52,50 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="carousel-image-container">
-                            <img src="assets/img/img-1.jpg" class="d-block w-100" alt="...">
-                            <div class="carousel-overlay"></div>
-                            <div class="row">
-                                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <img src="assets/img/img-1.jpg"  alt="...">
+                                <div class="carousel-overlay"></div>
+                            
+                                <div class="d-flex justify-content-center align-items-center">
                                     <div class="carousel-caption col-md-7 d-md-block text-md-start">
-                                        <h5>Mau bikin kaos satuan? Bisa banget!</h5>
+                                        <h1>Mau bikin kaos satuan? Bisa banget!</h1>
                                         <button class="btn btn-outline-light custom-btn">
                                             <i class="fa-brands fa-whatsapp"></i> Chat Sekarang!
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
+                   
                     <div class="carousel-item">
                         <div class="carousel-image-container">
-                            <img src="assets/img/img2.jpg" class="d-block w-100" alt="...">
-                            <div class="carousel-overlay"></div>
-                            <div class="row">
-                                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <img src="assets/img/img2.jpg"  alt="...">
+                                <div class="carousel-overlay"></div>
+                            
+                                <div class="d-flex justify-content-center align-items-center">
                                     <div class="carousel-caption d-md-block text-md-start">
-                                        <h5>Second slide label</h5>
+                                        <h1>Second slide label</h1>
                                         <p>Some representative placeholder content for the second slide.</p>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
+
                     <div class="carousel-item">
                         <div class="carousel-image-container">
-                            <img src="assets/img/img3.jpg" class="d-block w-100" alt="...">
-                            <div class="carousel-overlay"></div>
-                            <div class="row">
-                                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <img src="assets/img/img3.jpg"  alt="...">
+                                <div class="carousel-overlay"></div>
+                         
+                                <div class="d-flex justify-content-center align-items-center">
                                     <div class="carousel-caption d-md-block text-md-start">
-                                        <h5>Third slide label</h5>
+                                        <h1>Third slide label</h1>
                                         <p>Some representative placeholder content for the third slide.</p>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </div>            
+    </div>
 
         <!-- Icon container moved outside of carousel items -->
         <div class="icon-container">
@@ -210,10 +209,7 @@ window.addEventListener('load', function() {
 
 
         let myCarousel = document.querySelector('#carouselExampleCaptions');
-        let carousel = new bootstrap.Carousel(myCarousel, {
-            interval: 2000, // Ganti slide setiap 2 detik
-            wrap: true
-        });
+        let carousel = new bootstrap.Carousel(myCarousel);
 
         function prevSlide() {
             carousel.prev();
