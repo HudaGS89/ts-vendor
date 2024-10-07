@@ -234,3 +234,19 @@
 .carousel-control-next-icon {
   display: none; /* Hapus ikon default */
 }
+
+.hover-card {
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px); /* Floating efek saat hover */
+}
+
+.hover-card img {
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover img {
+  transform: scale(1.1); /* Zoom in pada gambar saat hover */
+}

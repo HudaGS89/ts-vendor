@@ -120,43 +120,109 @@
     </div>
 
     <!-- Content -->
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-6">
-            tes
+    
+     
+     
+    <!-- Carousel Jumbotron -->
+    <div id="carouselExampleCaptions" class="carousel slide position-relative my-5">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jahit</h5>
+                                    <p class="card-text">Jasa jahit profesional.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Desain</h5>
+                                    <p class="card-text">Desain kaos custom.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sablon</h5>
+                                    <p class="card-text">Sablon berkualitas tinggi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kustom</h5>
+                                    <p class="card-text">Kustomisasi produk.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kaos</h5>
+                                    <p class="card-text">Kaos premium dengan desain menarik.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 6">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aksesoris</h5>
+                                    <p class="card-text">Aksesoris fashion terbaru.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 7">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hoodie</h5>
+                                    <p class="card-text">Hoodie nyaman dan stylish.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card hover-card">
+                                <img src="assets/img/img-1.jpg" class="card-img-top" alt="Service 8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Topi</h5>
+                                    <p class="card-text">Topi trendy untuk semua acara.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6">
-            tes
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" onclick="prevSlide()">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" onclick="nextSlide()">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    </div>
+        
+
+    
 
     <!-- Include Popper.js first -->
     <script src="assets/js/popper.min.js"></script>
@@ -207,8 +273,8 @@ window.addEventListener('load', function() {
     }
 });
 
-
-        let myCarousel = document.querySelector('#carouselExampleCaptions');
+ // Inisialisasi carousel
+ let myCarousel = document.querySelector('#carouselExampleCaptions');
         let carousel = new bootstrap.Carousel(myCarousel);
 
         function prevSlide() {
@@ -218,8 +284,24 @@ window.addEventListener('load', function() {
         function nextSlide() {
             carousel.next();
         }
-    </script>
-    
+
+        // Menambahkan interaksi ketika kartu di-hover
+        const cards = document.querySelectorAll('.hover-card');
+
+        cards.forEach(card => {
+            // Tambahkan efek ketika mouse masuk (hover)
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'scale(1.05)';
+            });
+
+            // Kembalikan efek ketika mouse keluar
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+</script>
+
+
 
 </body>
 </html>
