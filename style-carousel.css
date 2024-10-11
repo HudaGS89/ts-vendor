@@ -45,14 +45,15 @@
   position: absolute; /* Menggunakan posisi absolute */
   top: 50%; /* Menempatkan di tengah secara vertikal */
   transform: translateY(-50%); /* Mengatur offset vertikal */
+  z-index: 5;
 }
 
 #carouselFeature .carousel-control-prev {
-  left: 10px; /* Jarak dari kiri */
+  left: 2vw; /* Jarak dari kiri */
 }
 
 #carouselFeature .carousel-control-next {
-  right: 10px; /* Jarak dari kanan */
+  right: 2vw; /* Jarak dari kanan */
 }
 
 #carouselFeature .carousel-control-prev:hover,
@@ -165,14 +166,20 @@
 @media screen and (min-width: 576px) {
   .carousel-inner {
     display: flex;
-    width: 90%;
+    width: 100%;
     margin-inline: auto;
-    padding: 1em 0;
+    padding: 1em 2em;
     overflow: hidden;
   }
   .carousel-item {
     display: block;
     margin-right: 0;
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media screen and (min-width: 995px) {
+  #carouselFeature .carousel-item {
     flex: 0 0 calc(100% / 3);
   }
 }

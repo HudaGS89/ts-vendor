@@ -2,7 +2,7 @@ $(document).ready(function () {
   const multipleItemCarousel = document.querySelector("#carouselFeature");
 
   if (window.matchMedia("(min-width:576px)").matches) {
-    const carousel = new bootstrap.Carousel(multipleItemCarousel, { interval: false });
+    // const carousel = new bootstrap.Carousel(multipleItemCarousel, { interval: false });
 
     var carouselWidth = $(".carousel-inner")[0].scrollWidth;
     var cardWidth = $(".carousel-item").width();
@@ -22,6 +22,24 @@ $(document).ready(function () {
         scrollPosition = scrollPosition - cardWidth;
       } else {
         scrollPosition = carouselWidth - cardWidth * 3; // Go to the end for infinite loop
+      }
+      $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 800);
+    });
+  } else if (window.matchMedia("(min-width:995px)").matches) {
+    $(".carousel-control-next").on("click", function () {
+      if (scrollPosition < carouselWidth - cardWidth * 4) {
+        scrollPosition = scrollPosition + cardWidth;
+      } else {
+        scrollPosition = 0; // Reset to the beginning for infinite loop
+      }
+      $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 800);
+    });
+
+    $(".carousel-control-prev").on("click", function () {
+      if (scrollPosition > 0) {
+        scrollPosition = scrollPosition - cardWidth;
+      } else {
+        scrollPosition = carouselWidth - cardWidth * 4; // Go to the end for infinite loop
       }
       $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 800);
     });
