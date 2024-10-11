@@ -32,15 +32,48 @@
   display: none; /* Sembunyikan duplikat item agar tidak mengganggu tampilan */
 }
 
-/* Gaya untuk tombol panah */
-#carouselFeatureControl .carousel-control-prev,
-#carouselFeatureControl .carousel-control-next {
-  width: 3rem;
-  height: 3rem;
-  background-color: grey;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
+#carouselFeature .carousel-control-prev,
+#carouselFeature .carousel-control-next {
+  width: 50px; /* Lebar panah */
+  height: 50px; /* Tinggi panah */
+  background-color: rgba(0, 0, 0, 0.8); /* Warna latar belakang gelap */
+  border-radius: 50%; /* Membuat panah bulat */
+  display: flex; /* Mengatur tampilan flex */
+  justify-content: center; /* Menempatkan ikon di tengah */
+  align-items: center; /* Menempatkan ikon di tengah */
+  transition: background-color 0.3s; /* Transisi latar belakang */
+  position: absolute; /* Menggunakan posisi absolute */
+  top: 50%; /* Menempatkan di tengah secara vertikal */
+  transform: translateY(-50%); /* Mengatur offset vertikal */
+}
+
+#carouselFeature .carousel-control-prev {
+  left: 10px; /* Jarak dari kiri */
+}
+
+#carouselFeature .carousel-control-next {
+  right: 10px; /* Jarak dari kanan */
+}
+
+#carouselFeature .carousel-control-prev:hover,
+#carouselFeature .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 1); /* Warna latar belakang lebih gelap saat hover */
+}
+
+#carouselFeature .carousel-control-prev-icon,
+#carouselFeature .carousel-control-next-icon {
+  width: 20px; /* Lebar ikon */
+  height: 20px; /* Tinggi ikon */
+  background-image: none; /* Hapus gambar latar */
+  border: solid white; /* Warna dan tebal border */
+  border-width: 0 2px 2px 0; /* Bentuk panah */
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg); /* Rotasi panah */
+}
+
+#carouselFeature .carousel-control-next-icon {
+  transform: rotate(-45deg); /* Rotasi panah ke kanan */
 }
 
 #carouselFeature .hover-card {
