@@ -1,75 +1,107 @@
-.img-wrapper {
-  max-width: 100%;
-  height: 30vh; /* Atur tinggi untuk layar kecil menggunakan satuan vh */
+/* Menambahkan font Montserrat */
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/MontserratAlternates-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/fonts/MontserratAlternates-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Menambahkan font Roboto */
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Media query untuk responsivitas pada ukuran kecil */
+@media (max-width: 576px) {
+}
+
+/* Gaya untuk tombol panah */
+#carouselFeature .carousel-control-prev,
+#carouselFeature .carousel-control-next {
+  width: 5%; /* Mengatur lebar tombol agar tidak terlalu besar */
+  color: rgb(7, 7, 7); /* Warna ikon */
+  font-size: 1.5rem; /* Ukuran ikon */
+  transition: color 0.3s ease; /* Transisi untuk hover */
+}
+
+/* Menampilkan ikon panah */
+#carouselFeature .carousel-control-prev:hover,
+#carouselFeature .carousel-control-next:hover {
+  color: #3d3c3c; /* Mengubah warna saat hover */
+}
+
+/* Style dasar untuk hover-card */
+#carouselFeature .hover-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease; /* Perpanjang durasi transisi menjadi lebih halus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efek melayang saat hover */
+#carouselFeature .hover-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Gambar di dalam kartu */
+#carouselFeature .hover-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.8s ease, height 0.8s ease; /* Perpanjang durasi transisi */
+  position: relative;
+  z-index: 1;
+}
+
+/* Gambar zoom saat hover dan menggantikan teks */
+#carouselFeature .hover-card:hover img {
+  transform: scale(1.05); /* Zoom lebih ringan */
+  height: 120%; /* Gambar akan turun lebih panjang ke bawah */
+}
+
+/* Konten teks dalam kartu */
+#carouselFeature .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9); /* Background semi transparan */
+  padding: 20px;
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Perpanjang durasi transisi */
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Teks memudar dan bergerak saat hover */
+#carouselFeature .hover-card:hover .card-body {
+  opacity: 0; /* Hilang secara smooth */
+  transform: translateY(100px); /* Teks turun lebih panjang */
+}
+
+#carouselFeature .carousel-items {
+  overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center; /* Pusatkan gambar di tengah */
-  overflow: hidden; /* Pastikan gambar tidak melampaui wadah */
+  scroll-behavior: smooth;
 }
 
-img {
-  width: 100%; /* Lebar gambar mengikuti lebar wadah */
-  height: 100%; /* Tinggi gambar mengikuti tinggi wadah */
-  object-fit: cover; /* Isi wadah dengan gambar, tetap menjaga proporsi */
-}
-
-@media screen and (min-width: 576px) {
-  .carousel-inner {
-    display: flex;
-  }
-
-  .carousel-item {
-    display: block;
-    margin-right: 10px; /* Tambahkan margin di antara item carousel */
-    flex: 0 0 calc(100% / 4); /* Tampilkan 4 gambar */
-  }
-
-  .img-wrapper {
-    height: 23vw; /* Tinggi responsif untuk layar besar */
-    overflow: hidden;
-  }
-
-  .carousel-inner {
-    padding: 0.5em;
-  }
-}
-
-.carousel-inner {
-  padding: 1em;
-}
-
-.card {
-  margin: 0 0.5em;
-  border-radius: 0;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 6vh;
-  height: 6vh;
-  background-color: #e1e1e1;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.5;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  opacity: 0.8;
-}
-
-@media screen and (max-width: 576px) {
-  .img-wrapper {
-    height: 30vh; /* Gunakan satuan vh untuk tinggi gambar */
-  }
-
-  img {
-    height: 100%; /* Tinggi gambar mengikuti tinggi wadah */
-  }
-
-  .carousel-inner {
-    padding: 0.5em;
-  }
+/* Set ukuran setiap kolom dalam carousel kedua */
+#carouselFeature .carousel-items .col-3 {
+  flex: 0 0 25%; /* Mengatur lebar kolom, disesuaikan sesuai jumlah item */
+  scroll-snap-align: start;
 }
