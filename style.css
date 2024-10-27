@@ -233,7 +233,8 @@
 
 .carouselFeature-container {
   /* background-color: black; */
-  padding-bottom: 20px;
+  padding-top: 60px;
+  padding-bottom: 80px;
 }
 
 #carouselFeature .carousel-item.cloned {
@@ -390,4 +391,32 @@
   #carouselFeature .carousel-item {
     flex: 0 0 calc(100% / 3);
   }
+}
+
+/* why choose us section */
+.why-choose-us {
+  background-color: #222;
+  color: #fff;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+.why-choose-us h2 {
+  font-weight: 700;
+  font-size: 36px;
+}
+.why-choose-us .icon {
+  font-size: 2rem;
+  color: #fff;
+}
+.feature-card {
+  background: none;
+  border: none;
+}
+.feature-card h5 {
+  font-weight: 600;
+  margin-top: 10px;
+}
+.feature-card p {
+  font-size: 14px;
+  color: #bbb;
 }
