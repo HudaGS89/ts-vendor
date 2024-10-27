@@ -68,13 +68,13 @@
 }
 
 /* Carousel Jumbotron */
-.carousel-image-container {
+#carouselExampleCaptions .carousel-image-container {
   position: relative;
   height: 100vh; /* Tinggi gambar 100% dari tinggi layar */
   overflow: hidden;
 }
 
-.carousel-image-container img {
+#carouselExampleCaptions .carousel-image-container img {
   width: 100%;
   height: 100%; /* Memastikan gambar mengisi container sepenuhnya */
   object-fit: cover; /* Menghindari distorsi gambar */
@@ -82,11 +82,11 @@
   will-change: transform, opacity; /* Tambahkan untuk hardware acceleration */
 }
 
-.carousel-item {
+#carouselExampleCaptions .carousel-item {
   position: relative;
 }
 
-.carousel-overlay {
+#carouselExampleCaptions .carousel-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -97,7 +97,7 @@
   transition: background-color 0.6s ease; /* Transisi smooth pada overlay */
 }
 
-.carousel-caption {
+#carouselExampleCaptions .carousel-caption {
   z-index: 2; /* Caption berada di atas overlay */
   position: absolute;
   bottom: 35%; /* Ubah posisi bottom untuk menjauh dari dasar gambar */
@@ -111,18 +111,18 @@
 }
 
 /* Ukuran font untuk judul dan deskripsi */
-.carousel-caption h1 {
+#carouselExampleCaptions .carousel-caption h1 {
   font-size: 3.5rem;
   font-family: "Roboto", sans-serif; /* Gunakan Montserrat */
   font-weight: bold; /* Terapkan bold */
   margin-bottom: 25px;
 }
 
-.carousel-caption p {
+#carouselExampleCaptions .carousel-caption p {
   font-size: 1.2rem; /* Ukuran font untuk deskripsi */
 }
 
-.custom-btn {
+#carouselExampleCaptions .custom-btn {
   color: white; /* Warna teks default putih */
   border: 2px solid white; /* Outline putih */
   padding: 10px 20px; /* Spasi dalam tombol */
@@ -132,12 +132,12 @@
   transition: all 0.3s ease; /* Efek transisi yang halus */
 }
 
-.custom-btn:hover {
+#carouselExampleCaptions .custom-btn:hover {
   background-color: white; /* Blok putih saat di-hover */
   color: black; /* Teks hitam saat di-hover */
 }
 
-.custom-btn i {
+#carouselExampleCaptions .custom-btn i {
   margin-right: 8px; /* Jarak antara ikon dan teks */
   font-size: 1.5em; /* Memperbesar ukuran ikon */
   display: inline-block;
@@ -208,16 +208,16 @@
 
 /* Media query untuk responsivitas pada ukuran kecil */
 @media (max-width: 576px) {
-  .carousel-caption {
+  #carouselExampleCaptions .carousel-caption {
     bottom: 30%;
     left: 0;
   }
 
-  .carousel-caption h1 {
+  #carouselExampleCaptions .carousel-caption h1 {
     font-size: 2rem; /* Ukuran font besar untuk judul */
   }
 
-  .carousel-caption p {
+  #carouselExampleCaptions .carousel-caption p {
     font-size: 1rem; /* Ukuran font lebih kecil untuk deskripsi */
   }
 
@@ -229,76 +229,165 @@
   }
 }
 
-/* Gaya untuk tombol panah */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%; /* Mengatur lebar tombol agar tidak terlalu besar */
-  color: rgb(7, 7, 7); /* Warna ikon */
-  font-size: 1.5rem; /* Ukuran ikon */
-  transition: color 0.3s ease; /* Transisi untuk hover */
+/* Carousel Feature - 2nd Carousel */
+
+.carouselFeature-container {
+  /* background-color: black; */
+  padding-bottom: 20px;
 }
 
-/* Menampilkan ikon panah */
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  color: #3d3c3c; /* Mengubah warna saat hover */
+#carouselFeature .carousel-item.cloned {
+  display: none; /* Sembunyikan duplikat item agar tidak mengganggu tampilan */
 }
 
-/* Style dasar untuk hover-card */
-.hover-card {
+#carouselFeature .carousel-control-prev,
+#carouselFeature .carousel-control-next {
+  width: 50px; /* Lebar panah */
+  height: 50px; /* Tinggi panah */
+  background-color: rgba(0, 0, 0, 0.8); /* Warna latar belakang gelap */
+  border-radius: 50%; /* Membuat panah bulat */
+  display: flex; /* Mengatur tampilan flex */
+  justify-content: center; /* Menempatkan ikon di tengah */
+  align-items: center; /* Menempatkan ikon di tengah */
+  transition: background-color 0.3s; /* Transisi latar belakang */
+  position: absolute; /* Menggunakan posisi absolute */
+  top: 50%; /* Menempatkan di tengah secara vertikal */
+  transform: translateY(-50%); /* Mengatur offset vertikal */
+  z-index: 5;
+}
+
+#carouselFeature .carousel-control-prev {
+  left: 2vw; /* Jarak dari kiri */
+}
+
+#carouselFeature .carousel-control-next {
+  right: 2vw; /* Jarak dari kanan */
+}
+
+#carouselFeature .carousel-control-prev:hover,
+#carouselFeature .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 1); /* Warna latar belakang lebih gelap saat hover */
+}
+
+#carouselFeature .carousel-control-prev-icon,
+#carouselFeature .carousel-control-next-icon {
+  width: 20px; /* Lebar ikon */
+  height: 20px; /* Tinggi ikon */
+  background-image: none; /* Hapus gambar latar */
+  border: solid white; /* Warna dan tebal border */
+  border-width: 0 2px 2px 0; /* Bentuk panah */
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg); /* Rotasi panah */
+}
+
+#carouselFeature .carousel-control-next-icon {
+  transform: rotate(-45deg); /* Rotasi panah ke kanan */
+}
+
+#carouselFeature .hover-card {
   position: relative;
   overflow: hidden;
-  transition: transform 0.5s ease; /* Perpanjang durasi transisi menjadi lebih halus */
+  transition: transform 0.5s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  margin: 15px; /* Tambahkan margin pada setiap kartu */
 }
 
 /* Efek melayang saat hover */
-.hover-card:hover {
+#carouselFeature .hover-card:hover {
   transform: translateY(-10px);
 }
 
 /* Gambar di dalam kartu */
-.hover-card img {
+#carouselFeature .hover-card img {
   width: 100%;
-  height: auto;
-  transition: transform 0.8s ease, height 0.8s ease; /* Perpanjang durasi transisi */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease, height 0.8s ease;
   position: relative;
   z-index: 1;
 }
 
-/* Gambar zoom saat hover dan menggantikan teks */
-.hover-card:hover img {
-  transform: scale(1.05); /* Zoom lebih ringan */
-  height: 120%; /* Gambar akan turun lebih panjang ke bawah */
+/* Overlay pada gambar */
+#carouselFeature .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
-/* Konten teks dalam kartu */
-.card-body {
+/* Tampilkan overlay saat hover */
+#carouselFeature .hover-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Gambar zoom saat hover */
+#carouselFeature .hover-card:hover img {
+  transform: scale(1.05);
+  height: 120%;
+}
+
+/* Konten teks dalam kartu yang pertama */
+#carouselFeature .card-body {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.9); /* Background semi transparan */
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px;
-  transition: opacity 0.8s ease, transform 0.8s ease; /* Perpanjang durasi transisi */
+  transition: opacity 0.8s ease, transform 0.8s ease;
   opacity: 1;
-  z-index: 2;
+  z-index: 3;
 }
 
-/* Teks memudar dan bergerak saat hover */
-.hover-card:hover .card-body {
-  opacity: 0; /* Hilang secara smooth */
-  transform: translateY(100px); /* Teks turun lebih panjang */
+/* Teks pertama hilang saat hover */
+#carouselFeature .hover-card:hover .card-body {
+  opacity: 0;
+  transform: translateY(100px);
 }
 
-.carousel-items {
-  overflow: hidden;
-  display: flex;
-  scroll-behavior: smooth;
+/* Konten teks dalam kartu yang kedua (muncul dari atas) */
+#carouselFeature .new-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 20px;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  z-index: 4;
 }
 
-/* Set ukuran setiap kolom dalam carousel kedua */
-.carousel-items .col-3 {
-  flex: 0 0 25%; /* Mengatur lebar kolom, disesuaikan sesuai jumlah item */
-  scroll-snap-align: start;
+/* Teks baru muncul saat hover */
+#carouselFeature .hover-card:hover .new-text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+@media screen and (min-width: 576px) {
+  #carouselFeature .carousel-inner {
+    display: flex;
+    width: 100%;
+    margin-inline: auto;
+    padding: 1em 2em;
+    overflow: hidden;
+  }
+  #carouselFeature .carousel-item {
+    display: block;
+    margin-right: 0;
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media screen and (min-width: 995px) {
+  #carouselFeature .carousel-item {
+    flex: 0 0 calc(100% / 3);
+  }
 }
