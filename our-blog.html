@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Blog Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+    <style>
+      .ourBlog {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .blog-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fff;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .blog-image {
+        height: 220px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .author-info {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .author-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+      }
+
+      .post-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #333;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-title:hover {
+        color: #007bff;
+        text-decoration: underline;
+      }
+
+      .post-meta {
+        font-size: 0.9rem;
+        color: #777;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .post-meta i {
+        color: #ff6b6b;
+      }
+
+      .read-more {
+        font-weight: bold;
+        color: #007bff;
+        margin-top: 1.25rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .read-more:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container ourBlog my-5">
+      <div class="section-title">
+        <p class="text-uppercase text-muted mb-1">Fresh News</p>
+        <h2 class="fw-bold">Our Blog</h2>
+      </div>
+
+      <div class="row gy-4">
+        <!-- Blog Card 1 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <div class="blog-image" style="background-image: url('assets/img/img-1.jpg')"></div>
+            <div class="blog-content">
+              <div class="author-info">
+                <img src="assets/img/img-1.jpg" alt="Author" class="author-image" />
+                <span>Natasha Putri</span>
+              </div>
+              <small class="text-muted">Sablon Manual</small>
+              <h5 class="post-title">Proses Sablon Plastisol Menggunakan Meja Sablon Rotary Manual</h5>
+              <p class="text-muted">Sablon manual masih banyak diminati oleh pegiat industri clothing. Dalam video ini adalah proses sablon plastisol menggunakan mesin sablon rotary manual...</p>
+              <div class="post-meta">
+                <i class="bi bi-heart-fill"></i> 10 likes
+                <span>|</span>
+                <i class="bi bi-eye-fill"></i> 1109 Views
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <div class="blog-image" style="background-image: url('assets/img/img1.jpg')"></div>
+            <div class="blog-content">
+              <div class="author-info">
+                <img src="assets/img/img1.jpg" alt="Author" class="author-image" />
+                <span>Natasha Putri</span>
+              </div>
+              <small class="text-muted">Edukasi Sablon</small>
+              <h5 class="post-title">Mau bikin local brand clothing tanpa modal?</h5>
+              <p class="text-muted">Bisnis brand clothing akhir-akhir ini menjadi salah satu usaha yang diminati oleh anak-anak muda Indonesia. Telah terbukti, sampai dengan cara memulai usaha tanpa modal...</p>
+              <div class="post-meta">
+                <i class="bi bi-heart-fill"></i> 13 likes
+                <span>|</span>
+                <i class="bi bi-eye-fill"></i> 1531 Views
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <div class="blog-image" style="background-image: url('assets/img/img2.jpg')"></div>
+            <div class="blog-content">
+              <div class="author-info">
+                <img src="assets/img/img2.jpg" alt="Author" class="author-image" />
+                <span>Natasha Putri</span>
+              </div>
+              <small class="text-muted">Sablon Manual</small>
+              <h5 class="post-title">Proses Sablon Plastisol Menggunakan Meja Sablon Rotary Manual</h5>
+              <p class="text-muted">Sablon manual masih banyak diminati oleh pegiat industri clothing. Dalam video ini adalah proses sablon plastisol menggunakan mesin sablon rotary manual...</p>
+              <div class="post-meta">
+                <i class="bi bi-heart-fill"></i> 10 likes
+                <span>|</span>
+                <i class="bi bi-eye-fill"></i> 1109 Views
+              </div>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
