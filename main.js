@@ -131,3 +131,9 @@ $(document).ready(function () {
     }
   });
 });
+
+// our clients
+document.addEventListener("DOMContentLoaded", function () {
+  const clientsLogos = document.querySelector(".clients-logos");
+  clientsLogos.classList.add("animate__animated", "animate__fadeInUp");
+});

@@ -481,3 +481,45 @@
   border-radius: 8px;
   object-fit: cover;
 }
+
+/* Styling for the Clients Section */
+.clients-logos {
+  max-width: 900px;
+  padding: 30px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clients-logos:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.client-logo {
+  max-height: 60px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.client-logo:hover {
+  opacity: 1;
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.arrow-icon i {
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.arrow-icon:hover i {
+  transform: translateX(5px);
+}
