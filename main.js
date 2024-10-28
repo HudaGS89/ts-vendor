@@ -113,3 +113,21 @@ $(document).ready(function () {
     }
   );
 });
+
+// Portfolio
+
+$(document).ready(function () {
+  $(".filter-btn").on("click", function () {
+    var filter = $(this).attr("data-filter");
+
+    $(".filter-btn").removeClass("active");
+    $(this).addClass("active");
+
+    if (filter === "all") {
+      $(".portfolio-item").show();
+    } else {
+      $(".portfolio-item").hide();
+      $("." + filter).show();
+    }
+  });
+});

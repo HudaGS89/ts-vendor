@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Section</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      /* Section Styling */
+      .portfolio-section h2 {
+        font-weight: 700;
+      }
+
+      .filter-btn.active {
+        background-color: #343a40;
+        color: #fff;
+      }
+
+      .portfolio-item .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .portfolio-item .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .card-body a {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container portfolio-section py-5">
+      <h2 class="text-center mb-4">Our Portfolio</h2>
+
+      <!-- Filter Buttons -->
+      <div class="d-flex justify-content-center mb-5">
+        <button class="btn btn-dark me-2 filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-dark me-2 filter-btn" data-filter="accessories">Accessories</button>
+        <button class="btn btn-outline-dark me-2 filter-btn" data-filter="design">Design</button>
+        <button class="btn btn-outline-dark filter-btn" data-filter="manual">Sablon Manual</button>
+      </div>
+
+      <!-- Portfolio Items -->
+      <div class="row portfolio-items g-4">
+        <div class="col-md-4 portfolio-item accessories">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="assets/img/img-1.jpg" class="card-img-top" alt="Kiss My Airs" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Kiss My Airs</h5>
+              <a href="#" class="stretched-link text-decoration-none text-muted">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item accessories">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="assets/img/img1.jpg" class="card-img-top" alt="Let's Get This" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Let's Get This</h5>
+              <a href="#" class="stretched-link text-decoration-none text-muted">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item design">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="assets/img/img3.jpg" class="card-img-top" alt="Stop Beefin'" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Stop Beefin'</h5>
+              <a href="#" class="stretched-link text-decoration-none text-muted">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item manual">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="assets/img/img4.jpg" class="card-img-top" alt="Delinquents" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Delinquents</h5>
+              <a href="#" class="stretched-link text-decoration-none text-muted">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item accessories">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="assets/img/img6.jpg" class="card-img-top" alt="Money" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Money</h5>
+              <a href="#" class="stretched-link text-decoration-none text-muted">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".filter-btn").on("click", function () {
+          var filter = $(this).attr("data-filter");
+
+          $(".filter-btn").removeClass("active");
+          $(this).addClass("active");
+
+          if (filter === "all") {
+            $(".portfolio-item").show();
+          } else {
+            $(".portfolio-item").hide();
+            $("." + filter).show();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

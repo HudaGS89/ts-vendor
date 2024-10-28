@@ -420,3 +420,64 @@
   font-size: 14px;
   color: #bbb;
 }
+
+/* Section Portfolio */
+.portfolio-section {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+.portfolio-section h2 {
+  font-weight: 700;
+}
+
+.filter-btn.active {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.portfolio-item .card {
+  transition: transform 0.3s;
+}
+
+.portfolio-item .card:hover {
+  transform: scale(1.05);
+}
+
+/* Section FAQ */
+.faq-section {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+.accordion-button {
+  font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: #1c1c1c;
+}
+
+.faq-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+}
+
+.img-1,
+.img-2,
+.img-3,
+.img-4 {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}

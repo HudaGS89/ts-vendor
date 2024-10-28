@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Section</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      /* Section Styling */
+      .portfolio-section {
+        background-color: #f8f9fa;
+        padding: 40px 0;
+      }
+
+      .portfolio-section h2 {
+        font-weight: 700;
+      }
+
+      .filter-btn.active {
+        background-color: #343a40;
+        color: #fff;
+      }
+
+      .portfolio-item .card {
+        transition: transform 0.3s;
+      }
+
+      .portfolio-item .card:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container portfolio-section">
+      <h2 class="text-center mb-4">Our Portfolio</h2>
+
+      <!-- Filter Buttons -->
+      <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-outline-dark me-2 filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-dark me-2 filter-btn" data-filter="accessories">Accessories</button>
+        <button class="btn btn-outline-dark me-2 filter-btn" data-filter="design">Design</button>
+        <button class="btn btn-outline-dark filter-btn" data-filter="manual">Sablon Manual</button>
+      </div>
+
+      <!-- Portfolio Items -->
+      <div class="row portfolio-items">
+        <div class="col-md-4 portfolio-item accessories mb-4">
+          <div class="card">
+            <img src="assets/img/img3.jpg" class="card-img-top" alt="Kiss My Airs" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Kiss My Airs</h5>
+              <a href="#" class="text-decoration-none">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item accessories mb-4">
+          <div class="card">
+            <img src="assets/img/img4.jpg" class="card-img-top" alt="Let's Get This" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Let's Get This</h5>
+              <a href="#" class="text-decoration-none">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item design mb-4">
+          <div class="card">
+            <img src="assets/img/img-1.jpg" class="card-img-top" alt="Stop Beefin'" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Stop Beefin'</h5>
+              <a href="#" class="text-decoration-none">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item manual mb-4">
+          <div class="card">
+            <img src="assets/img/img2.jpg" class="card-img-top" alt="Delinquents" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Delinquents</h5>
+              <a href="#" class="text-decoration-none">View Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 portfolio-item accessories mb-4">
+          <div class="card">
+            <img src="assets/img/img1.jpg" class="card-img-top" alt="Money" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Money</h5>
+              <a href="#" class="text-decoration-none">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".filter-btn").on("click", function () {
+          var filter = $(this).attr("data-filter");
+
+          $(".filter-btn").removeClass("active");
+          $(this).addClass("active");
+
+          if (filter === "all") {
+            $(".portfolio-item").show();
+          } else {
+            $(".portfolio-item").hide();
+            $("." + filter).show();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
