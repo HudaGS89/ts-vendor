@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Maps API Example</title>
+    <style>
+      /* Styling peta agar terlihat */
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+      /* Styling untuk marker kustom */
+      .custom-marker {
+        position: relative;
+        background-color: white;
+        padding: 5px 10px;
+        border-radius: 3px;
+        border: 1px solid #007bff;
+        display: flex;
+        align-items: center;
+        transform: translate(50%, -50%); /* Geser ke kanan */
+      }
+      /* Styling untuk titik marker */
+      .marker-dot {
+        height: 12px;
+        width: 12px;
+        background-color: #007bff; /* Warna titik */
+        border-radius: 50%;
+        margin-right: 5px; /* Jarak antara titik dan teks */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Peta Google Maps</h1>
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjq9CJsRzqrygHLWE7cUti4SwL8H_IXy8&libraries=marker" async defer></script>
+
+    <script>
+      // Tambahkan event listener untuk memanggil initMap setelah API dimuat
+      window.addEventListener("load", initMap);
+
+      function initMap() {
+        const lokasi = { lat: -6.708746098263027, lng: 106.7955661067431 };
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 13,
+          center: lokasi,
+          mapId: "93ad39886ebfba9f",
+        });
+
+        // Buat elemen marker kustom
+        const markerElement = document.createElement("div");
+        markerElement.className = "custom-marker";
+        markerElement.innerHTML = `
+                <div class="marker-dot"></div>
+                TS Vendor
+            `;
+
+        const marker = new google.maps.marker.AdvancedMarkerElement({
+          map: map,
+          position: lokasi,
+          content: markerElement,
+        });
+
+        // Mengatur offset untuk marker
+        const offset = {
+          x: 20, // Geser ke kanan 20 piksel
+          y: 0, // Tidak ada offset vertikal
+        };
+        markerElement.style.transform = `translate(${offset.x}px, ${offset.y}px)`;
+      }
+    </script>
+  </body>
+</html>

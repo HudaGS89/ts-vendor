@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      /* Styling peta agar terlihat */
+      #map {
+        height: 100vh;
+        /* Mengatur tinggi peta menjadi penuh */
+        width: 100%;
+        /* position: absolute; */
+        /* Mengatur peta sebagai posisi absolut */
+        top: 0;
+        left: 0;
+        z-index: 1; /* Peta berada di belakang konten lainnya */
+      }
+      /* Styling untuk marker kustom */
+
+      /* Styling untuk titik marker */
+      .marker-dot {
+        height: 25px;
+        width: 25px;
+        background-color: #007bff; /* Warna titik */
+        border-radius: 50%;
+        margin-right: 5px; /* Jarak antara titik dan teks */
+      }
+
+      /* CSS Styling */
+      .mapsContact {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /* Agar tidak ada scrollbar */
+        height: 100vh;
+        /* Agar kontainer mengambil tinggi penuh layar */
+        display: flex;
+        align-items: center; /* Pusatkan secara vertikal */
+        justify-content: center; /* Memusatkan form secara horizontal */
+        position: relative; /* Posisi relatif untuk kontainer */
+        z-index: 2; /* Kontainer form berada di atas peta */
+      }
+
+      .contact-form-container {
+        background-color: rgba(255, 255, 255, 0.8); /* Background putih transparan */
+        padding: 20px;
+        max-width: 600px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .contact-form-container h5 {
+        font-weight: 600;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .contact-form-container h2 {
+        font-weight: 700;
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .contact-form-container .form-control {
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.2); /* Background input transparan */
+      }
+
+      .contact-input {
+        border: none;
+        border-bottom: 2px solid #ccc;
+        border-radius: 0;
+        outline: none;
+        padding: 8px 0;
+      }
+
+      .contact-input:focus {
+        border-bottom: 2px solid #333;
+        box-shadow: none;
+      }
+
+      @media (max-width: 768px) {
+        .mapsContact {
+          padding-left: 10px; /* Padding untuk layar kecil */
+          padding-right: 10px; /* Hapus padding kiri */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="mapsContact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="contact-form-container">
+              <h5 class="text-muted">GET IN TOUCH</h5>
+              <h2 class="fw-bold">Contact us</h2>
+              <form id="contactForm">
+                <div class="row mb-4">
+                  <div class="col">
+                    <input type="text" id="name" class="form-control contact-input" placeholder="Your name" required />
+                  </div>
+                  <div class="col">
+                    <input type="email" id="email" class="form-control contact-input" placeholder="Your email" required />
+                  </div>
+                </div>
+                <div class="form-group mb-4">
+                  <textarea class="form-control contact-input" rows="3" placeholder="Your message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark px-4">Send</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- AdminLTE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjq9CJsRzqrygHLWE7cUti4SwL8H_IXy8&libraries=marker" async defer></script>
+
+    <script>
+      // Tambahkan event listener untuk memanggil initMap setelah API dimuat
+      window.addEventListener("load", initMap);
+
+      function initMap() {
+        const lokasi = { lat: -6.708746098263027, lng: 106.7955661067431 };
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 13,
+          center: lokasi,
+          mapId: "93ad39886ebfba9f",
+        });
+
+        // Buat elemen marker kustom
+        const markerElement = document.createElement("div");
+        markerElement.className = "custom-marker";
+        markerElement.innerHTML = `
+                    <div class="marker-dot"></div>
+                    TS Vendor
+                `;
+
+        const marker = new google.maps.marker.AdvancedMarkerElement({
+          map: map,
+          position: lokasi,
+          content: markerElement,
+        });
+
+        // Mengatur offset untuk marker
+        const offset = {
+          x: 20, // Geser ke kanan 20 piksel
+          y: 0, // Tidak ada offset vertikal
+        };
+        markerElement.style.transform = `translate(${offset.x}px, ${offset.y}px)`;
+      }
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        // Menghandle submit form
+        $("#contactForm").on("submit", function (e) {
+          e.preventDefault(); // Mencegah reload halaman
+          alert("Form submitted!"); // Menampilkan alert saat form disubmit
+        });
+      });
+    </script>
+  </body>
+</html>
