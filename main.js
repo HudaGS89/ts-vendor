@@ -137,3 +137,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const clientsLogos = document.querySelector(".clients-logos");
   clientsLogos.classList.add("animate__animated", "animate__fadeInUp");
 });
+
+// Footer
+$(document).ready(function () {
+  $("#subscribe-btn").click(function () {
+    const email = $("#email").val();
+    if (email) {
+      alert("Thank you for subscribing!");
+      $("#email").val(""); // Clear the email field
+    } else {
+      alert("Please enter a valid email address.");
+    }
+  });
+});

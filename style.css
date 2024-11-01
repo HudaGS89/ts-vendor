@@ -685,3 +685,55 @@
   color: #0056b3;
   text-decoration: underline;
 }
+
+/* Custom footer styling */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.footer h5 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.footer .footer-social-icons a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer .footer-social-icons a:hover {
+  color: #ddd;
+}
+
+.footer .subscribe input[type="email"] {
+  width: 280px;
+  padding: 10px 15px;
+  border: 1px solid #555;
+  border-radius: 4px 0 0 4px;
+  background-color: #333;
+  color: #fff;
+  outline: none;
+}
+.footer .subscribe button {
+  padding: 10px 20px;
+  border-radius: 0 4px 4px 0;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.footer .subscribe button:hover {
+  background-color: #555;
+}
+.footer .footer-bottom {
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
